@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hairdresser/static/css/main.42852bd4.css",
+    "main.js": "/hairdresser/static/js/main.e077bb37.js",
+    "index.html": "/hairdresser/index.html",
+    "main.42852bd4.css.map": "/hairdresser/static/css/main.42852bd4.css.map",
+    "main.e077bb37.js.map": "/hairdresser/static/js/main.e077bb37.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42852bd4.css",
+    "static/js/main.e077bb37.js"
+  ]
+}
