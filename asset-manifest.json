@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hairdresser/static/css/main.42852bd4.css",
-    "main.js": "/hairdresser/static/js/main.e077bb37.js",
-    "index.html": "/hairdresser/index.html",
-    "main.42852bd4.css.map": "/hairdresser/static/css/main.42852bd4.css.map",
-    "main.e077bb37.js.map": "/hairdresser/static/js/main.e077bb37.js.map"
+    "main.css": "/static/css/main.7258d47a.css",
+    "main.js": "/static/js/main.232282c2.js",
+    "index.html": "/index.html",
+    "main.7258d47a.css.map": "/static/css/main.7258d47a.css.map",
+    "main.232282c2.js.map": "/static/js/main.232282c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.42852bd4.css",
-    "static/js/main.e077bb37.js"
+    "static/css/main.7258d47a.css",
+    "static/js/main.232282c2.js"
   ]
 }
