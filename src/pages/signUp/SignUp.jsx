@@ -1,15 +1,17 @@
 import React, {useState} from "react";
 import {Input,FormContainer,SubmitButton} from "../../components";
 import {useBarbers} from "../../utils/storeProvider";
-import {Link} from "react-router-dom";
 
 export const type = {
     customer:"Customer",
     barber:"Barber"
 };
 
+let nextId = 5;
+
 const SignUp = ()=> {
     const [userCredentials,setUserCredentials] = useState({
+        id:++nextId,
         firstName:'',
         lastName:'',
         email:'',
@@ -36,14 +38,13 @@ const SignUp = ()=> {
     const handleSubmit = e => {
         e.preventDefault();
         if(userCredentials.type === type.barber) {
-            console.log(userCredentials);
             setBarbers([userCredentials,...barbers]);
         }
+        localStorage.setItem(userCredentials.email,JSON.stringify(userCredentials));
     }
 
     return (
         <FormContainer submitHandler={handleSubmit}>
-            <Link to='/home'>Home</Link>
             <div className='flex flex-row justify-between items-center w-1/4'>
                 <p className='text-xl text-white'>Sign Up As</p>
                 <select className='bg-blue-500 rounded p-2 text-center text-white outline-0' value={selected} onChange={e => {

@@ -2,6 +2,7 @@ import {type} from "../pages/signUp/SignUp";
 
 const Barbers = [
     {
+        id:1,
         firstName:'Joni',
         lastName:'Jiniani',
         email:'jony@gmail.com',
@@ -12,6 +13,7 @@ const Barbers = [
         address:'Weretlis 36'
     },
     {
+        id:2,
         firstName:'Eka',
         lastName:'Gomarteli',
         email:'goma@gmail.com',
@@ -22,6 +24,7 @@ const Barbers = [
         address:'Yanchavelis 35'
     },
     {
+        id:3,
         firstName:'Kenzo',
         lastName:'Tenma',
         email:'tenma@gmail.com',
@@ -32,6 +35,7 @@ const Barbers = [
         address:'Beliashvilis 17'
     },
     {
+        id:4,
         firstName:'Nina',
         lastName:'Ninashvili',
         email:'nina@gmail.com',
@@ -42,6 +46,7 @@ const Barbers = [
         address:'Chavchavadzis 12'
     },
     {
+        id:5,
         firstName:'Elson',
         lastName:'Mandela',
         email:'mandela@gmail.com',
