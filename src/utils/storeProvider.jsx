@@ -1,6 +1,5 @@
 import React, {useContext, useState} from "react";
-import UserContext from "../contexts/userContext";
-import BarberContext from "../contexts/barberContext";
+import {BarberContext,UserContext} from "../contexts";
 import Barbers from "./dummyData";
 
 export const useUsers = ()=> useContext(UserContext);
