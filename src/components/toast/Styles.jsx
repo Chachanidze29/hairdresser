@@ -1,9 +1,12 @@
 import styled, { css } from 'styled-components';
 
 const StyledContainer = styled.div`
-  position: fixed;
-  cursor: pointer;
+  display:flex;
+  flex-direction:column;
+  gap:100px;
   z-index: 101;
+  cursor:pointer;
+  position:absolute;
 
   ${(props) => {
     switch (props.position) {
@@ -24,7 +27,7 @@ const StyledContainer = styled.div`
 
   ${(props) => props.currentIndex
     && css`
-        top: calc(24px * (${props.currentIndex} + 1));
+        top: calc(50px * (${props.currentIndex} + 1));
     `};
 `;
 

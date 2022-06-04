@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Input,FormContainer,SubmitButton} from "../../components";
 import { useNavigate } from 'react-router-dom';
 import useToast from "../../utils/useToast";
+import {useAuthUser} from "../../utils/storeProvider";
 
 const initialValue = {
     email:'',
@@ -12,7 +13,7 @@ const Login = ()=> {
     const [userCredentials,setUserCredentials] = useState(initialValue);
     const [error,setError] = useState('');
     const navigate = useNavigate();
-
+    const {authUser,setAuthUser} = useAuthUser();
     const {addToast,renderToasts} = useToast();
 
     const handleChange = e => {
@@ -28,11 +29,12 @@ const Login = ()=> {
         let auth_user = JSON.parse(localStorage.getItem(userCredentials.email));
         if(auth_user && auth_user.password === password) {
             if(auth_user.type === 'Customer') {
-                localStorage.setItem('authUser',JSON.stringify(userCredentials));
+                const {email,password} = userCredentials;
+                console.log(authUser);
+                setAuthUser({...authUser,email: email,password: password});
                 navigate('/home');
-            }else {
+            } else {
                 addToast({type:'error',message:"Can't log in type barber"});
-                setUserCredentials(initialValue)
             }
         }else {
             setError('Wrong Email Or Password');

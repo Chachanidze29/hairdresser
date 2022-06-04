@@ -23,7 +23,7 @@ const Toast = ({
                 <StyledContainer position='top right' onClick={hideHandler} currentIndex={currentIndex}>
                     <StyledContent mode={mode}>{message}</StyledContent>
                 </StyledContainer>
-                ,document.body)
+                ,document.getElementById('portal'))
         )
             :
             null

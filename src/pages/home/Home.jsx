@@ -1,10 +1,9 @@
 import React from "react";
 import {useBarbers} from "../../utils/storeProvider";
-import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Home = ()=> {
     const {barbers} = useBarbers();
-    const navigate = useNavigate();
 
     return (
         <div className='flex flex-col items-center justify-center'>
@@ -16,7 +15,7 @@ const Home = ()=> {
                             <p>${barber.price}</p>
                         </div>
                         {
-                            <button onClick={()=>navigate(navigate(`/home/${barber.id}`))} className='bg-blue-500 border-2 text-white rounded p-3 m-2 hover:bg-transparent hover:text-blue-500 hover:border-blue-500'>Details</button>
+                            <Link to={`/home/${barber.id}`} className='bg-blue-500 border-2 text-white rounded p-3 m-2 hover:bg-transparent hover:text-blue-500 hover:border-blue-500'>Details</Link>
                         }
                     </div>
                 ))

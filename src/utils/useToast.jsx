@@ -9,7 +9,7 @@ const useToasts = () => {
         setToasts([...toasts, { type, message, id: uuid() }]);
     };
 
-    const handleHide = (id) => {
+    const handleHide = id => {
         setToasts([...toasts.filter((t) => t.id !== id)]);
     };
 
