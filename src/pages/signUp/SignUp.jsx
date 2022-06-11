@@ -45,7 +45,7 @@ const SignUp = ()=> {
             setBarbers([userCredentials,...barbers]);
             addToast({type:'info',message:'Signed up as Barber'});
         }
-        localStorage.setItem(userCredentials.email,JSON.stringify(userCredentials));
+        localStorage.setItem(email,JSON.stringify(userCredentials));
         addToast({type:'info',message:'Signed up successfully, Please log in'});
         setUserCredentials(initialState);
     }

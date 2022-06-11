@@ -11,7 +11,6 @@ const initialValue = {
 
 const Login = ()=> {
     const [userCredentials,setUserCredentials] = useState(initialValue);
-    const [error,setError] = useState('');
     const navigate = useNavigate();
     const {authUser,setAuthUser} = useAuthUser();
     const {addToast,renderToasts} = useToast();
@@ -24,12 +23,13 @@ const Login = ()=> {
         })
     }
 
+    const {email,password} = userCredentials;
+
     const handleSubmit = e => {
         e.preventDefault();
         let auth_user = JSON.parse(localStorage.getItem(userCredentials.email));
         if(auth_user && auth_user.password === password) {
             if(auth_user.type === 'Customer') {
-                const {email,password} = userCredentials;
                 console.log(authUser);
                 setAuthUser({...authUser,email: email,password: password});
                 navigate('/home');
@@ -37,18 +37,16 @@ const Login = ()=> {
                 addToast({type:'error',message:"Can't log in type barber"});
             }
         }else {
-            setError('Wrong Email Or Password');
+            addToast({type:'error',message:'Wrong Email Or Password'});
         }
     }
-
-    const {email,password} = userCredentials;
 
     return (
         <>
             {renderToasts()}
             <FormContainer submitHandler={handleSubmit}>
-                <Input errorText={error} value={email} changeHandler={handleChange} placeHolder={'Enter email'} type='email' name='email' />
-                <Input errorText={error} value={password} changeHandler={handleChange} placeHolder={'Enter password'} type='password' name='password'/>
+                <Input value={email} changeHandler={handleChange} placeHolder={'Enter email'} type='email' name='email' />
+                <Input value={password} changeHandler={handleChange} placeHolder={'Enter password'} type='password' name='password'/>
                 <SubmitButton value={'Submit'} />
             </FormContainer>
         </>

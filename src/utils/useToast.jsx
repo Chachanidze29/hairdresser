@@ -10,7 +10,7 @@ const useToasts = () => {
     };
 
     const handleHide = id => {
-        setToasts([...toasts.filter((t) => t.id !== id)]);
+        setToasts([...toasts.filter(t => t.id !== id)]);
     };
 
     const renderToasts = useCallback(() => (

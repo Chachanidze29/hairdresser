@@ -14,7 +14,7 @@ const BarberDetail = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        setReviews([...reviews,review]);
+        setReviews([review,...reviews]);
         setReview({...review,content: ''});
     }
 
